@@ -24,6 +24,7 @@ jobs:
         node-version: 16
         cache: 'yarn'
     - run: rm tzgg.htm
+    - run: yarn install
     - run: node main.js
     - name: Commit
       uses: EndBug/add-and-commit@v8
