@@ -10,7 +10,7 @@ puppeteer.launch({ headless: true }).then(async browser => {
   console.log('Running tests..')
   const page = await browser.newPage()
   await page.goto('https://yjszs.yzu.edu.cn/tzgg/tzgg.htm')
-  await page.waitForTimeout(5000)
+  await page.waitForSelector('ul.newsList');
   const content = await page.content();
   fs.writeFileSync('tzgg.htm', content);
   await browser.close()
